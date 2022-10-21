@@ -10,9 +10,11 @@
 import PySimpleGUI as sg
 
 def about():
+    
     """
     About information.
     """
+    
     popup = sg.popup_no_buttons('Nagini - Printer Information Collection Tool',
                                 'Version: 1.0',
                                 'Build Date: 10/05/2022',
@@ -30,9 +32,11 @@ def about():
                                 title='About', keep_on_top='True', icon=r'icons/info.ico',
                                 relative_location=(0,0))
 def usage():
+    
     """
     Usage information.
     """
+    
     popup = sg.popup_no_buttons('DISCLAIMER',
                                 'THE SOFTWARE TOOL IS PROVIDED "AS IS", WITHOUT WARRANTY',
                                 'OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT',
@@ -45,9 +49,11 @@ def usage():
                                 title='Usage Policy Notification', keep_on_top='True', icon=r'icons/info.ico',
                                 relative_location=(0, 0))
 def notice():
+    
     """
     Notice information.
     """
+    
     popup = sg.popup_no_buttons('This Software Tool was created as a python related pre-sales project.',
                                 'The tool is not endorsed or supported by HP Inc and was created initially '
                                 'for use in presales demo or pre production testing environments.', 
@@ -56,9 +62,11 @@ def notice():
                                 title='Software Notice', keep_on_top='True', icon=r'icons/info.ico',
                                 relative_location=(0, 0))
 def github():
+    
     """
     Github information.
     """
+    
     popup = sg.popup_no_buttons('Github:',
                                 ' * Code: https://github.com/jamesdunnehp/Nagini/',
                                 ' * Issues: https://github.com/jamesdunnehp/Nagini/issues/',

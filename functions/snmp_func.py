@@ -161,6 +161,7 @@ def snmpmac(dev_ip, snmpcs, snmp_oid):
     if errorIndication:
 
         return None
+    
         return errorIndication
 
     for oid, val in varBinds:

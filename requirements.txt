@@ -1,0 +1,5 @@
+clipboard
+PySimpleGUI
+requests
+pysnmp
+urllib3

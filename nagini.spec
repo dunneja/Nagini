@@ -1,5 +1,5 @@
 # -*- mode: python ; coding: utf-8 -*-
-# pyinstaller --clean --onefile --icon=icons\printer64.ico nagini.py __init__.py __main__.py core\__init__.py  core\prn_connc.py core\prn_datac.py core\prn_snmpc.py functions\__init__.py functions\csv_func.py functions\dir_func.py functions\log_func.py functions\snmp_func.py functions\cfg_func.py gui\__init__.py gui\gui_csv_view.py gui\gui_func.py gui\gui_help.py gui\prntool.py
+# pyinstaller --clean --onefile --icon=icons\printer64.ico nagini.py __init__.py __main__.py core\__init__.py core\prn_connc.py core\prn_datac.py core\prn_snmpc.py functions\__init__.py functions\csv_func.py functions\dir_func.py functions\log_func.py functions\snmp_func.py functions\cfg_func.py gui\__init__.py gui\gui_csv_view.py gui\gui_func.py gui\gui_help.py gui\gui_prntool.py
 
 block_cipher = None
 

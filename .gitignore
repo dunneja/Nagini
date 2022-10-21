@@ -1,0 +1,6 @@
+# Ignore all files in ANY directory named venv.
+venv/
+logs/
+output/
+mibs/
+__pycache__

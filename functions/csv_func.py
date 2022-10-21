@@ -145,9 +145,7 @@ def csv_header(output_dir, csv_name, csv_format, header):
         
     file_date = datetime.now().strftime("%d-%m-%Y")  # defines the day, month, year.
     
-    file_lfn = csv_name + '_' + file_date + \
-    
-        csv_format  # concatenate the longfilename.
+    file_lfn = csv_name + '_' + file_date + csv_format  # concatenate the longfilename.
     
     csvoutpath = os.path.join(output_dir, file_lfn)
     
@@ -170,9 +168,7 @@ def prn_datac_csv_output(outputs, output_dir, csv_name, csv_format):
     
     file_date = datetime.now().strftime("%d-%m-%Y")  # defines the day, month, year.
     
-    file_lfn = csv_name + '_' + file_date + \
-    
-        csv_format  # concatenate the longfilename.
+    file_lfn = csv_name + '_' + file_date + csv_format  # concatenate the longfilename.
     
     csvoutpath = os.path.join(output_dir, file_lfn)
     
@@ -197,9 +193,7 @@ def prn_connchk_csv_output(outputs, output_dir, csv_name, csv_format):
     
     file_date = datetime.now().strftime("%d-%m-%Y")  # defines the day, month, year.
     
-    file_lfn = csv_name + '_' + file_date + \
-    
-        csv_format  # concatenate the longfilename.
+    file_lfn = csv_name + '_' + file_date + csv_format  # concatenate the longfilename.
     
     csvoutpath = os.path.join(output_dir, file_lfn)
     
@@ -223,9 +217,7 @@ def prn_snmpchk_csv_output(outputs, output_dir, csv_name, csv_format):
     
     file_date = datetime.now().strftime("%d-%m-%Y")  # defines the day, month, year.
     
-    file_lfn = csv_name + '_' + file_date + \
-    
-        csv_format  # concatenate the longfilename.
+    file_lfn = csv_name + '_' + file_date + csv_format  # concatenate the longfilename.
     
     csvoutpath = os.path.join(output_dir, file_lfn)
     

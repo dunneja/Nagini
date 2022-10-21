@@ -29,6 +29,11 @@
         - pysnmp - https://pypi.org/project/pysnmp/
         - sys -  https://docs.python.org/3/library/sys.html
         - re - https://docs.python.org/3/library/re.html#module-re
+        - clipboard - https://pypi.org/project/clipboard/
+        - PySimpleGUI - https://www.pysimplegui.org/en/latest/
+        - requests - https://pypi.org/project/requests/
+        - pysnmp - https://pysnmp.readthedocs.io/en/latest/
+        - urllib3 - https://pypi.org/project/urllib3/
 - Pyinstaller - version 4.10 - https://pyinstaller.readthedocs.io/en/stable/ (Only used to create EXE from *.py files)
 
 ## Features

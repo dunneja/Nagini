@@ -72,6 +72,11 @@ The tool provides the following capabilities:
   - Output of results / information to csv format.
   - Output of logging for all functions to txt file.
 
+* CSV File Viewer
+  - Feature allows to select a CSV and then presents the information in a GUI Table. 
+  - Designed to be used if tool is being executed from a server with no excel for example.
+  - Easier to view thousands of entries when not on a desktop. 
+ 
 ## Screenshots
 ![Example screenshot](./img/screenshot1.PNG)
 

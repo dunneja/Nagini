@@ -104,6 +104,11 @@ The project dependencies as are follows;
         - pysnmp - https://pypi.org/project/pysnmp/
         - sys -  https://docs.python.org/3/library/sys.html
         - re - https://docs.python.org/3/library/re.html#module-re
+        - clipboard - https://pypi.org/project/clipboard/
+        - PySimpleGUI - https://www.pysimplegui.org/en/latest/
+        - requests - https://pypi.org/project/requests/
+        - pysnmp - https://pysnmp.readthedocs.io/en/latest/
+        - urllib3 - https://pypi.org/project/urllib3/
 
 * Setup the project from source files;
 

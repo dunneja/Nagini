@@ -78,9 +78,17 @@ The tool provides the following capabilities:
   - Easier to view thousands of entries when not on a desktop. 
  
 ## Screenshots
-![Example screenshot](./img/screenshot1.PNG)
+![Example screenshot](./screenshots/Nagini-SS-01.PNG)
 
-![Example screenshot](./img/screenshot2.PNG)
+![Example screenshot](./screenshots/Nagini-SS-02.PNG)
+
+![Example screenshot](./screenshots/Nagini-SS-03.PNG)
+
+![Example screenshot](./screenshots/Nagini-SS-04.PNG)
+
+![Example screenshot](./screenshots/Nagini-SS-05.PNG)
+
+![Example screenshot](./screenshots/Nagini-SS-06.PNG)
 
 ## Setup
 The project dependencies as are follows;

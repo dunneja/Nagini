@@ -145,7 +145,7 @@ The project dependencies as are follows;
 
    - All of the code is tested and the tool works.
    - Some of the code still needs refactoring into a decent state, i was in a rush! :o)
-   - Some of the information on this README was to accomodate Code / Security Reviews, so if you think TMI that is why ;o)
+   - Some of the information on this README, and comments in code was to accomodate Code / Security Reviews.
    - I'm not responsible for how this tool is used. 
     
 ## Contact

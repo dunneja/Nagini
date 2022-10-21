@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from gui.gui_csv_view import csv_viewer
-from gui.gui_prntool import prn_tool_gui
+from gui import gui_csv_view
+from gui import gui_func
+from gui import gui_help
+from gui import gui_prntool

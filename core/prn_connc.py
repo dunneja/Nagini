@@ -33,6 +33,7 @@ class prn_conn_chk():
         
         # Read the config_file contents.
         self.config = configparser.ConfigParser()
+        
         self.config.read(self.config_file)
         
         self.csv_file = csv_file # Define CSV file Variable.

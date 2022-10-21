@@ -1,4 +1,4 @@
-# HP Xerox Printer Data Collector Tool
+# HP & Xerox Printer Connection Tester & Data Collector Tool.
  - This console tool was designed to collect Xerox printer MI information for MPS discovery purposes.
 
 ## Table of Contents

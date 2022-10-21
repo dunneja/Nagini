@@ -90,6 +90,8 @@ The tool provides the following capabilities:
 
 ![Example screenshot](./screenshots/Nagini-SS-06.png)
 
+![Example screenshot](./screenshots/Nagini-SS-07.png)
+
 ## Setup
 The project dependencies as are follows;
 

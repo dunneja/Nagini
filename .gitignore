@@ -1,6 +1,9 @@
 # Ignore all files in ANY directory named venv.
 venv/
+build/
+dist/
 logs/
 output/
 mibs/
 __pycache__
+nagini.spec

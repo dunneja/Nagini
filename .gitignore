@@ -7,3 +7,4 @@ output/
 mibs/
 __pycache__
 nagini.spec
+nagini.build

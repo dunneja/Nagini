@@ -12,11 +12,13 @@ import clipboard
 import PySimpleGUI as sg
 
 # Import classes, methods and functions.
-from functions.csv_func import create_prn_csv, create_passwd_csv
-from functions.cfg_func import config_file
-from gui.gui_csv_view import csv_viewer
-from gui.gui_help import about, github, usage, notice
-from gui.gui_func import popup_warning
+from functions.nagini_csv import create_prn_csv, create_passwd_csv
+from functions.nagini_config import config_file
+from gui.nagini_csv_view import csv_viewer
+from gui.nagini_help import about, github, usage, notice
+from gui.nagini_func import popup_warning
+from icons.nagini_icons import printer
+from icons.nagini_icons import warning
 
 # Define config file variable.
 ini_file = 'config.ini'
@@ -47,9 +49,13 @@ def prn_tool_gui():
             [sg.Output(size=(80, 20), key='_OUTPUT_')],
             [sg.Submit(button_text='Start'), sg.Button(button_text='Clear'), sg.Cancel(button_text='Quit'), sg.Text('Vendor Selection:', visible=False, key='_VENDOR_TXT_'), sg.Combo(['Xerox','HP'], default_value='Xerox', size=(20,5), key='_VENDOR_', visible=False), sg.Push(), sg.Button(button_text='View CSV File')], ]
     
+    # Icons
+    printer_base64 = printer
+    warning_base64 = warning
+
     # Define the main window.
     window = sg.Window('Nagini - Printer Information Collection Tool',
-                   layout, icon=r'icons/printer64.ico', relative_location=(0,0), finalize='True')
+                   layout, icon=printer_base64, relative_location=(0,0), finalize='True')
     
     # Window Event Loops
     while True:
@@ -123,7 +129,7 @@ def prn_tool_gui():
             if create_prn_csv('Printers.csv') == 1:
                 
                 popup = sg.PopupOK('Printers CSV File Already Exists!',
-                        title='Warning!', keep_on_top='True', icon=r'icons/warning.ico', relative_location=(0,0))
+                        title='Warning!', keep_on_top='True', icon=warning_base64, relative_location=(0,0))
                 
             else: 
                 
@@ -131,14 +137,14 @@ def prn_tool_gui():
                 
                 popup = sg.PopupOK('CSV File Generated!',
                         'Check README for CSV Config options.',
-                        title='CSV Template', keep_on_top='True', icon=r'icons/info.ico', relative_location=(0,0))
+                        title='CSV Template', keep_on_top='True', icon=warning_base64, relative_location=(0,0))
                 
         if event == 'Passwords CSV':
             
             if create_passwd_csv('Passwords.csv') == 1:
                 
                 popup = sg.PopupOK('Passwords CSV File Already Exists!',
-                     title='Warning!', keep_on_top='True', icon=r'icons/warning.ico', relative_location=(0,0))
+                     title='Warning!', keep_on_top='True', icon=warning_base64, relative_location=(0,0))
                 
             else:
                 
@@ -148,7 +154,7 @@ def prn_tool_gui():
                 
                 popup = sg.PopupOK('CSV File Generated!',
                         'Check README for CSV Config options.',
-                        title='CSV Template', keep_on_top='True', icon=r'icons/info.ico', relative_location=(0,0))
+                        title='CSV Template', keep_on_top='True', icon=warning_base64, relative_location=(0,0))
                 
         # When PRNSNMPCHK program is selected - csvfile txt, csv file path and csv file browse button shown.
         if event == '_PRNSNMPCHK_':

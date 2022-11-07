@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from gui import gui_csv_view
-from gui import gui_func
-from gui import gui_help
-from gui import gui_prntool
+from gui import nagini_csv_view
+from gui import nagini_func
+from gui import nagini_help
+from gui import nagini_main

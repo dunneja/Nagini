@@ -7,7 +7,7 @@
 # Created Date : 10/05/2022
 # ----------------------------------------------------------------------------
 # Import Nagini Graphical User Interface. 
-from gui.gui_prntool import prn_tool_gui
+from gui.nagini_main import prn_tool_gui
 
 # Call prntoolgui Class
 if __name__ == '__main__':

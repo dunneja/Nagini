@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import functions.cfg_func
-import functions.csv_func
-import functions.dir_func
-import functions.log_func
-import functions.snmp_func
+import functions.nagini_config
+import functions.nagini_csv
+import functions.nagini_dir
+import functions.nagini_log
+import functions.nagini_snmp

@@ -14,10 +14,10 @@ import configparser  # Import Standard Python Modules.
 from pysnmp import hlapi  # Import Standard Python Modules.
 
 # Import functions.
-from functions import csv_func as csv_func  # CSV functions.
-from functions import dir_func as dir_func  # Directory I/O Functions.
-from functions import log_func as log_func  # Logging Function.
-from functions import snmp_func as snmp_func # SNMP functions.
+from functions import nagini_csv as nagini_csv  # CSV functions.
+from functions import nagini_dir as nagini_dir  # Directory I/O Functions.
+from functions import nagini_log as nagini_log  # Logging Function.
+from functions import nagini_snmp as nagini_snmp # SNMP functions.
 
 class prn_data_col():
     
@@ -78,7 +78,7 @@ class prn_data_col():
         self.env_chk()
         
         # Feed csv file into csv_import function.
-        self.printers = csv_func.csv_import(self.csv_file)
+        self.printers = nagini_csv.csv_import(self.csv_file)
         
         prn_count = 1  # Set the Printer count to 1.
         
@@ -141,7 +141,7 @@ class prn_data_col():
             
             # Write prnoutput list/dict to csv file.
             # Usage: <function>(output_dir, filename, fileformat)
-            csv_func.prn_datac_csv_output(
+            nagini_csv.prn_datac_csv_output(
                 self.prn_output, 'output', 'prn_datacol_output', '.csv')
             
             # Clear prninfo dict.
@@ -168,7 +168,7 @@ class prn_data_col():
         '-------------------------------------------------------')
         
         # Check csv file is present and available.
-        csv_func.csv_chk(self.csv_file)
+        nagini_csv.csv_chk(self.csv_file)
         
         # Check if log directory exists and create if not.
         print("---------------------------------------------------------------" +
@@ -179,7 +179,7 @@ class prn_data_col():
         print("---------------------------------------------------------------" +
         '-------------------------------------------------------')
         
-        dir_func.chk_log_dir('logs')  # Specify logs directory
+        nagini_dir.chk_log_dir('logs')  # Specify logs directory
         
         # Check if output directory exists and create if not.
         print("---------------------------------------------------------------" +
@@ -190,11 +190,11 @@ class prn_data_col():
         print("---------------------------------------------------------------" +
         '-------------------------------------------------------')
         
-        dir_func.chk_output_dir('output')  # Specify output directory.
+        nagini_dir.chk_output_dir('output')  # Specify output directory.
         
         # Write csv header fields to csv file in output directory.
         # Usage: <function>(output_dir, filename, fileformat)
-        csv_func.csv_header('output', 'prn_datacol_output', '.csv', 'prn_datac')
+        nagini_csv.csv_header('output', 'prn_datacol_output', '.csv', 'prn_datac')
 
     def prn_desc(self):
         
@@ -205,7 +205,7 @@ class prn_data_col():
         try:
             
             # Using SNMPv2c, we retrieve the hrDeviceDescr of the remote device.
-            prn_hrdd = snmp_func.get(
+            prn_hrdd = nagini_snmp.get(
                 self.dev_ip, [self.hr_Device_Descr_oid], hlapi.CommunityData(self.snmp_cs))
             
             # find the vendor string in the hrDeviceDescr string as provided.
@@ -258,7 +258,7 @@ class prn_data_col():
         try:
             
             # Using SNMPv2c, we retrieve the snmp hostname of the remote device.
-            prn_hn = snmp_func.get(
+            prn_hn = nagini_snmp.get(
                 self.dev_ip, [self.snmp_hostname_oid], hlapi.CommunityData(self.snmp_cs))
             
             print(f' * Printer Hostname: {prn_hn[self.snmp_hostname_oid]}')
@@ -278,7 +278,7 @@ class prn_data_col():
         try:
             
             # Using SNMPv2c, we retrieve the mac address of the remote device.
-            prn_mac = snmp_func.snmpmac(self.dev_ip, self.snmp_cs, self.mac_addr_oid)
+            prn_mac = nagini_snmp.snmpmac(self.dev_ip, self.snmp_cs, self.mac_addr_oid)
             
             print(f' * Printer MAC Address: {str(prn_mac)}')
             
@@ -296,7 +296,7 @@ class prn_data_col():
         
         try:
             # Using SNMPv2c, we retrieve the snmp syslocation of the remote device.
-            prn_loc = snmp_func.get(
+            prn_loc = nagini_snmp.get(
                 self.dev_ip, [self.sys_location_oid], hlapi.CommunityData(self.snmp_cs))
             
             print(f' * Printer Location: {prn_loc[self.sys_location_oid]}')
@@ -315,7 +315,7 @@ class prn_data_col():
         
         try:
             # Using SNMPv2c, we retrieve the mono count of the remote device.
-            prn_mc = snmp_func.get(
+            prn_mc = nagini_snmp.get(
                 self.dev_ip, [self.mono_oid], hlapi.CommunityData(self.snmp_cs))
             
             print(f' * Mono Count: {str(prn_mc[self.mono_oid])}')
@@ -335,7 +335,7 @@ class prn_data_col():
         try:
             
             # Using SNMPv2c, we retrieve the color count of the remote device.
-            prn_cc = snmp_func.get(
+            prn_cc = nagini_snmp.get(
                 self.dev_ip, [self.color_oid], hlapi.CommunityData(self.snmp_cs))
             
             print(f' * Color Count: {str(prn_cc[self.color_oid])}')
@@ -354,7 +354,7 @@ class prn_data_col():
         
         try:
             # Using SNMPv2c, we retrieve total impressions of the remote device.
-            prn_tc = snmp_func.get(
+            prn_tc = nagini_snmp.get(
                 self.dev_ip, [self.total_oid], hlapi.CommunityData(self.snmp_cs))
             
             print(f' * Total Count: {str(prn_tc[self.total_oid])}')
@@ -374,7 +374,7 @@ class prn_data_col():
         try:
             
             # Using SNMPv2c, we retrieve the serial of the remote device.
-            prn_sn = snmp_func.get(
+            prn_sn = nagini_snmp.get(
                 self.dev_ip, [self.serial_oid], hlapi.CommunityData(self.snmp_cs))
             
             print(f' * Printer Serial: {str(prn_sn[self.serial_oid])}')
@@ -394,7 +394,7 @@ class prn_data_col():
         try:
             
             # Using SNMPv2c, we retrieve the sysDescr of the remote device.
-            prn_sys = snmp_func.get(
+            prn_sys = nagini_snmp.get(
                 self.dev_ip, [self.sys_Descr_oid], hlapi.CommunityData(self.snmp_cs))
             
             print(
@@ -419,7 +419,7 @@ class prn_data_col():
         
         print(" * RuntimeError: Check IP Address and SNMP Community Name Are Correct!")
         
-        log_func.logw('data_log', error_msg)
+        nagini_log.logw('data_log', error_msg)
 
     def end_msg(self):
         

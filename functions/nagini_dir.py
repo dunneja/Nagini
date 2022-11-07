@@ -8,7 +8,7 @@
 # ----------------------------------------------------------------------------
 """ Check DIR functions. """
 # Import modules.
-from functions import log_func as log_func
+from functions import nagini_log as nagini_log
 import os
 
 def chk_log_dir(log_dir):
@@ -33,7 +33,7 @@ def chk_log_dir(log_dir):
             
             emsg = f'Sucessfully created the {log_dir} directory.'
             
-            log_func.logw('sys_log', emsg)
+            nagini_log.logw('sys_log', emsg)
             
         except OSError:
             
@@ -61,7 +61,7 @@ def chk_output_dir(output_dir):
             
             emsg = f'Sucessfully created the {output_dir} directory.'
             
-            log_func.logw('sys_log', emsg)
+            nagini_log.logw('sys_log', emsg)
             
         except OSError:
             
@@ -69,4 +69,4 @@ def chk_output_dir(output_dir):
             
             emsg = f' * Creation of the {output_dir} directory failed.'
             
-            log_func.logw('sys_log', emsg)
+            nagini_log.logw('sys_log', emsg)

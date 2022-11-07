@@ -16,9 +16,9 @@ import configparser
 from subprocess import PIPE, run
 
 # Import self coded functions.
-from functions import csv_func as csv_func
-from functions import dir_func as dir_func
-from functions import log_func as log_func
+from functions import nagini_csv as nagini_csv
+from functions import nagini_dir as nagini_dir
+from functions import nagini_log as nagini_log
 
 class prn_conn_chk():
 
@@ -44,7 +44,7 @@ class prn_conn_chk():
 
         self.output = [] # List for Results Dictionary to be stored.
 
-        self.printers = csv_func.csv_import(self.csv_file)  # Feed csv.
+        self.printers = nagini_csv.csv_import(self.csv_file)  # Feed csv.
 
         prn_count = 1 # Set the Printer count to 1.
 
@@ -76,7 +76,7 @@ class prn_conn_chk():
             self.output.append(self.results) # Append results to Dict.
             
             # Write output to csv file.
-            csv_func.prn_connchk_csv_output(self.output, 'output', 'prn_connchk_output', '.csv')
+            nagini_csv.prn_connchk_csv_output(self.output, 'output', 'prn_connchk_output', '.csv')
             
             # Clear results dict.
             self.results.clear()
@@ -103,7 +103,7 @@ class prn_conn_chk():
         
         log_dir = self.config.get('main', 'log_dir')
 
-        dir_func.chk_log_dir(log_dir)  # Specify logs directory
+        nagini_dir.chk_log_dir(log_dir)  # Specify logs directory
         
         # Check if output directory exists and create if not.
         print("---------------------------------------------------------------" +
@@ -116,7 +116,7 @@ class prn_conn_chk():
         
         output_dir = self.config.get('main', 'output_dir')
         
-        dir_func.chk_output_dir(output_dir)  # Specify output directory.
+        nagini_dir.chk_output_dir(output_dir)  # Specify output directory.
         
         # Check csv input file is present and available.
         print("---------------------------------------------------------------" +
@@ -127,11 +127,11 @@ class prn_conn_chk():
         print("---------------------------------------------------------------" +
         '-------------------------------------------------------')
         
-        csv_func.csv_chk(self.csv_file)
+        nagini_csv.csv_chk(self.csv_file)
         
         # Write csv header fields to csv file in output directory.
         # Usage: <function>(output_dir, filename, fileformat, header type)
-        csv_func.csv_header('output', 'prn_connchk_output', '.csv', 'prn_connc')
+        nagini_csv.csv_header('output', 'prn_connchk_output', '.csv', 'prn_connc')
 
     def prn_web_chk(self, dev_ip):
 
@@ -255,7 +255,7 @@ class prn_conn_chk():
         
             f'{self.dev_ip}')
         
-            log_func.logw('conn_log', emsg)
+            nagini_log.logw('conn_log', emsg)
 
     def ping_chk(self, host):
         
@@ -331,7 +331,7 @@ class prn_conn_chk():
         
             emsg = f'DNS Hostname: Unable to resolve DNS for {dev_ip}'
         
-            log_func.logw('conn_log', emsg)
+            nagini_log.logw('conn_log', emsg)
         
             csv_result = 'Unresolved'
         

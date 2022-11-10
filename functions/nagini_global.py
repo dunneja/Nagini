@@ -13,7 +13,7 @@
 import configparser
 
 # Import self coded functions.
-from functions import nagini_csv,nagini_dir,nagini_log
+from functions import nagini_csv, nagini_dir, nagini_log
 
 def env_chk(config_file, csv_file):
     """

@@ -1,4 +1,5 @@
-# HP & Xerox Printer Connection Tester & Data Collector Tool.
+# HP & Xerox Printer Connection Test & Data Collector Tool.
+
  - This GUI tool was designed to test HP & Xerox Printer Connectivity, and to collect HP/Xerox printer mib information.
 
 ## Table of Contents
@@ -144,4 +145,4 @@ The project dependencies as are follows;
    - I'm not responsible for how this tool is used. 
     
 ## Contact
-Created by James Dunne <james.dunne1@gmail.com>
+Created by James Dunne - <james.dunne1@gmail.com>

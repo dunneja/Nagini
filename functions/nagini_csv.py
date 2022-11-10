@@ -72,7 +72,6 @@ def csv_import(csv_input):
             csv_dict = csv.DictReader(csv_file)
             csv_import = list(csv_dict)
         return csv_import
-
     except FileNotFoundError:
         msg = f' * Error: Filename {csv_filename} Not Found.'
         print(msg)

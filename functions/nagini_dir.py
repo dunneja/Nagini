@@ -11,7 +11,7 @@
 
 # Import modules.
 import os
-from functions import nagini_log as nagini_log
+from functions import nagini_log
 
 
 def chk_log_dir(log_dir):

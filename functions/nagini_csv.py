@@ -14,7 +14,7 @@ import csv
 import os
 import os.path
 from datetime import datetime
-from functions import nagini_log as nagini_log
+from functions import nagini_log
 
 def csv_chk(csv_file):
     """

@@ -14,11 +14,8 @@
 - This project was developed for the requirements of a large customer with an inconsistent fleet configuration.
 - The purpose of this project is to enable the customer to perform discovery on HP & Xerox Devices on the existing printer estate.
 - Due to the technical challenges around device configurations, a tool was required to enable the team to feed in 30,000 IP's, and 1500+ SNMP Community strings from a CSV file based on a location identifier. 
-- The customer has 30,000 devices with 1500+ SNMP Get community Passwords - one per location. A large part of the fleet was Xerox, These two issues mean that COTS solutions are unable to be used for collecting device information, as they cannot deal with this many SNMP Community Strings and site locations. 
-- Due to time constraints and security considerations, introducing third party solutions was not viable. Also such a solution to meet the SNMP need does not exist. This tool was developed to over come the customer issues and allow for delivery of services in a timely manner.
 - Some printers had ICMP turned off. All printers allowed HTTP(s) Connections. Printers hostname was unique - DNS FQDN naming convention partly used the printer vendor name. This could be used to identify printer type during discovery.
 - This tool tests printer connectivity via ICMP, HTTP/s and DNS, it also collects device information via SNMP and outputs results to a csv file for analysis.
-- Adding another tool was not an option.
 
 ## Technologies Used
 - Python - version 3.10.4 - https://docs.python.org/3/

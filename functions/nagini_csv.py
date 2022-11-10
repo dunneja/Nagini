@@ -10,9 +10,7 @@
 """ CSV Importer and File checker. Will import/export CSV file into a dictionary. """
 
 # Import modules
-import csv
-import os
-import os.path
+import csv, os, os.path
 from datetime import datetime
 from functions import nagini_log
 
@@ -94,11 +92,9 @@ def csv_header(output_dir, csv_name, csv_format, header):
         header = ['TRIGRAM', 'Description', 'IP Address', 'MAC Address', 'Hostname', 
                   'Location', 'Monocount', 'Colorcount', 'Totalcount', 'Serial', 
                   'SNMPGet', 'Firmware']
-
     file_date = datetime.now().strftime("%d-%m-%Y")  # defines the day, month, year.
     file_lfn = csv_name + '_' + file_date + csv_format  # concatenate the longfilename.
     csvoutpath = os.path.join(output_dir, file_lfn)
-    
     # Open csv file and append contents of list/dict as a new line.
     with open(csvoutpath, 'w', encoding='UTF8', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=header)
@@ -111,12 +107,10 @@ def prn_datac_csv_output(outputs, output_dir, csv_name, csv_format):
     header = ['TRIGRAM', 'Description', 'IP Address', 'MAC Address', 'Hostname', 
          'Location', 'Monocount', 'Colorcount', 'Totalcount', 'Serial', 
          'SNMPGet', 'Firmware']
-
     file_date = datetime.now().strftime("%d-%m-%Y")  # defines the day, month, year.
     file_lfn = csv_name + '_' + file_date + csv_format  # concatenate the longfilename.
     csvoutpath = os.path.join(output_dir, file_lfn)
     prnoutput = outputs  # prndatac output
-    
     # Open csv file and append contents of list/dict as a new line.
     with open(csvoutpath, 'a', encoding='UTF8', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=header)
@@ -129,12 +123,10 @@ def prn_connchk_csv_output(outputs, output_dir, csv_name, csv_format):
     # Define headers for the ouput csv file.
     header = ['TRIGRAM', 'IP Address', 'HTTPS Check',
          'Ping Check', 'DNS Resolution', 'Model']
-    
     file_date = datetime.now().strftime("%d-%m-%Y")  # defines the day, month, year.
     file_lfn = csv_name + '_' + file_date + csv_format  # concatenate the longfilename.
     csvoutpath = os.path.join(output_dir, file_lfn)
     prnoutput = outputs  # prndatac output
-    
     # Open csv file and append contents of list/dict as a new line.
     with open(csvoutpath, 'a', encoding='UTF8', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=header) 
@@ -150,7 +142,6 @@ def prn_snmpchk_csv_output(outputs, output_dir, csv_name, csv_format):
     file_lfn = csv_name + '_' + file_date + csv_format  # concatenate the longfilename.
     csvoutpath = os.path.join(output_dir, file_lfn)
     prnoutput = outputs  # prndatac output
-    
     # Open csv file and append contents of list/dict as a new line.
     with open(csvoutpath, 'a', encoding='UTF8', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=header)

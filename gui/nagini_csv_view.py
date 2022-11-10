@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------
-# Filename     : csvtable.py
-# version      : 1.0
-# Created By   : James Dunne (HP UK&I Technology Consultant)
-# Created Date : 14/03/2022
+# Filename     : nagini_csv_view.py
+# Author       : James Dunne <james.dunne1@gmail.com>
+# License      : LGPL-3.0-only
+# Comment      : This file is part of Nagini.
 # ----------------------------------------------------------------------------
+
+""" Pysimplegui CSV viewer program """
+
 import PySimpleGUI as sg
 import csv
+
 from icons.nagini_icons import warning
 from icons.nagini_icons import printer
 

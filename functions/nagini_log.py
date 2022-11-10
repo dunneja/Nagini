@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------
-# Filename     : logfunc.py
-# version      : 1.0
-# Created By   : James Dunne (HP UK&I Technology Consultant)
-# Created Date : 14/03/2022
+# Filename     : nagini_log.py
+# Author       : James Dunne <james.dunne1@gmail.com>
+# License      : LGPL-3.0-only
+# Comment      : This file is part of Nagini.
 # ----------------------------------------------------------------------------
 # Import Python Modules.
 from datetime import datetime

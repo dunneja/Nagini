@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------
 # Filename     : nagini.py
-# version      : 1.0
-# Created By   : James Dunne (HP UK&I Technology Consultant)
-# Created Date : 10/05/2022
+# Author       : James Dunne <james.dunne1@gmail.com>
+# License      : LGPL-3.0-only
+# Comment      : This file is part of Nagini.
 # ----------------------------------------------------------------------------
 # Import Nagini Graphical User Interface. 
 from gui.nagini_main import prn_tool_gui

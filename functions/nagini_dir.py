@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------
-# Filename     : dirfunc.py
-# version      : 1.0
-# Created By   : James Dunne (HP UK&I Technology Consultant)
-# Created Date : 14/03/2022
+# Filename     : nagini.py
+# Author       : James Dunne <james.dunne1@gmail.com>
+# License      : LGPL-3.0-only
+# Comment      : This file is part of Nagini.
 # ----------------------------------------------------------------------------
+
 """ Check DIR functions. """
+
 # Import modules.
-from functions import nagini_log as nagini_log
 import os
+from functions import nagini_log as nagini_log
+
 
 def chk_log_dir(log_dir):
     

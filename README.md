@@ -1,5 +1,5 @@
 # HP & Xerox Printer Connection Tester & Data Collector Tool.
- - This GUI tool was designed to test HP & Xerox Printer Connectivity, and to collect HP/Xerox printer MI information for MPS discovery purposes.
+ - This GUI tool was designed to test HP & Xerox Printer Connectivity, and to collect HP/Xerox printer mib information.
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -10,11 +10,11 @@
 * [Contact](#contact)
 
 ## General Information
-- This project was developed for the requirements of a large customer in the UK&I.
-- The purpose of this project is to enable the HP UK&I MPS team to perform discovery on HP& Xerox Devices on the customer printer estate.
+- This project was developed for the requirements of a large customer with an inconsistent fleet configuration.
+- The purpose of this project is to enable the customer to perform discovery on HP & Xerox Devices on the existing printer estate.
 - Due to the technical challenges around device configurations, a tool was required to enable the team to feed in 30,000 IP's, and 1500+ SNMP Community strings from a CSV file based on a location identifier. 
-- The customer has 30,000 devices with 1500+ SNMP Get community Passwords - one per location. A large part of the fleet was Xerox, These two issues mean that HP WJA is unable to be used for collecting device information, as it cannot deal with this many SNMP Community Strings and Cannot read Xerox MIBs. 
-- Due to time constraints and security considerations, introducing another third party solution was not viable. Also such a solution to meet the SNMP need does not exist. This tool was developed to over come the project issues and allow for delivery of services in a timely manner.
+- The customer has 30,000 devices with 1500+ SNMP Get community Passwords - one per location. A large part of the fleet was Xerox, These two issues mean that COTS solutions are unable to be used for collecting device information, as they cannot deal with this many SNMP Community Strings and site locations. 
+- Due to time constraints and security considerations, introducing third party solutions was not viable. Also such a solution to meet the SNMP need does not exist. This tool was developed to over come the customer issues and allow for delivery of services in a timely manner.
 - Some printers had ICMP turned off. All printers allowed HTTP(s) Connections. Printers hostname was unique - DNS FQDN naming convention partly used the printer vendor name. This could be used to identify printer type during discovery.
 - This tool tests printer connectivity via ICMP, HTTP/s and DNS, it also collects device information via SNMP and outputs results to a csv file for analysis.
 - Adding another tool was not an option.
@@ -128,18 +128,13 @@ The project dependencies as are follows;
         - pip3 install -r requirements.txt
 
 ## Usage
+
 * Running the project from source files;
 
     - Ensure all Dependencies are installed.
     - Populate the CSV file(s) as per the example entry provided. 
-    - Run 'python nagini.py' 
+    - Run 'python3 nagini.py' 
     - Check Output dir for output results and logs dir for error logs. 
-
-* Running the project from EXE;
-
-    - Populate the CSV file(s) as per the example entry provided. 
-    - Run the EXE file 'Nagini.exe' 
-    - Check Output dir for output results and logs dir for error logs.
 
 ## Notes
 
@@ -149,4 +144,4 @@ The project dependencies as are follows;
    - I'm not responsible for how this tool is used. 
     
 ## Contact
-Created by James Dunne, Technology Consultant - HP UK&I - James.Dunne@hp.com
+Created by James Dunne <james.dunne1@gmail.com>

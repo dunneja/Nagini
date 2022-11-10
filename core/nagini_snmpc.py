@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------
-# Filename     : prnsnmpc.py
-# version      : 1.0
-# Created By   : James Dunne (HP UK&I Technology Consultant)
-# Created Date : 09/05/2022
+# Filename     : nagini_snmpc.py
+# Author       : James Dunne <james.dunne1@gmail.com>
+# License      : LGPL-3.0-only
+# Comment      : This file is part of Nagini.
 # ----------------------------------------------------------------------------
 # import modules
 from functions import nagini_snmp as nagini_snmp
@@ -12,6 +12,7 @@ from functions import nagini_csv as nagini_csv
 from functions import nagini_log as nagini_log
 from functions import nagini_dir as nagini_dir
 from pysnmp import hlapi  # Import Standard Python Modules.
+
 def prn_snmp_chk(prn_file, snmp_file):
 
     """

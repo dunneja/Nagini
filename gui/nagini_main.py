@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------
-# Filename     : prngui.py
-# version      : 1.0
-# Created By   : James Dunne (HP UK&I Technology Consultant)
-# Created Date : 25/04/2022
+# Filename     : nagini_main.py
+# Author       : James Dunne <james.dunne1@gmail.com>
+# License      : LGPL-3.0-only
+# Comment      : This file is part of Nagini.
 # ----------------------------------------------------------------------------
+
+""" Main Nagini GUI module. """
+
 # Import python core modules.
 import os
 import clipboard
@@ -14,9 +17,11 @@ import PySimpleGUI as sg
 # Import classes, methods and functions.
 from functions.nagini_csv import create_prn_csv, create_passwd_csv
 from functions.nagini_config import config_file
+
 from gui.nagini_csv_view import csv_viewer
 from gui.nagini_help import about, github, usage, notice
-from gui.nagini_func import popup_warning
+from gui.nagini_common import popup_warning
+
 from icons.nagini_icons import printer
 from icons.nagini_icons import warning
 
@@ -147,15 +152,11 @@ def prn_tool_gui():
                      title='Warning!', keep_on_top='True', icon=warning_base64, relative_location=(0,0))
                 
             else:
-                
                 window['_CSVPTXT_']('Passwords.csv')
-                
                 window['_OUTPUT_']('')
-                
                 popup = sg.PopupOK('CSV File Generated!',
                         'Check README for CSV Config options.',
                         title='CSV Template', keep_on_top='True', icon=warning_base64, relative_location=(0,0))
-                
         # When PRNSNMPCHK program is selected - csvfile txt, csv file path and csv file browse button shown.
         if event == '_PRNSNMPCHK_':
             

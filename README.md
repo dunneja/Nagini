@@ -3,6 +3,7 @@
  - This GUI tool was designed to test HP & Xerox Printer Connectivity, and to collect HP/Xerox printer mib information.
 
 ## Table of Contents
+
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
@@ -11,15 +12,18 @@
 * [Contact](#contact)
 
 ## General Information
+
 - This project was developed for the requirements of a large customer with an inconsistent fleet configuration.
 - The purpose of this project is to enable the customer to perform discovery on HP & Xerox Devices on the existing printer estate.
 - Due to the technical challenges around device configurations, a tool was required to enable the team to feed in 30,000 IP's, and 1500+ SNMP Community strings from a CSV file based on a location identifier. 
-- Some printers had ICMP turned off. All printers allowed HTTP(s) Connections. 
+- Some printers had ICMP turned off. 
+- All printers allowed HTTP(s) Connections. 
 - Printers hostname was unique - DNS FQDN naming convention partly used the printer vendor name. This could be used to identify printer type during discovery.
 - This tool tests printer connectivity via ICMP, HTTP/s and DNS, it also collects device information via SNMP and outputs results to a csv file for analysis.
 
 ## Technologies Used
-- Python - version 3.10.4 - https://docs.python.org/3/
+
+- Python - version >=3.10.5 - https://docs.python.org/3/
     - Modules - https://docs.python.org/3/tutorial/modules.html
         - csv - https://docs.python.org/3/library/csv.html#module-csv
         - os - https://docs.python.org/3/library/os.html#module-os
@@ -82,6 +86,7 @@ The tool provides the following capabilities:
   - Easier to view thousands of entries when not on a desktop. 
  
 ## Screenshots
+
 ![Example screenshot](./screenshots/Nagini-SS-01.png)
 
 ![Example screenshot](./screenshots/Nagini-SS-02.png)
@@ -97,26 +102,10 @@ The tool provides the following capabilities:
 ![Example screenshot](./screenshots/Nagini-SS-07.png)
 
 ## Setup
-The project dependencies as are follows;
-
-- Python - version 3.10.4 - https://docs.python.org/3/
-    - Modules - https://docs.python.org/3/tutorial/modules.html
-        - csv - https://docs.python.org/3/library/csv.html#module-csv
-        - os - https://docs.python.org/3/library/os.html#module-os
-        - os.path - https://docs.python.org/3/library/os.path.html
-        - datetime - https://docs.python.org/3/library/datetime.html
-        - pysnmp - https://pypi.org/project/pysnmp/
-        - sys -  https://docs.python.org/3/library/sys.html
-        - re - https://docs.python.org/3/library/re.html#module-re
-        - clipboard - https://pypi.org/project/clipboard/
-        - PySimpleGUI - https://www.pysimplegui.org/en/latest/
-        - requests - https://pypi.org/project/requests/
-        - pysnmp - https://pysnmp.readthedocs.io/en/latest/
-        - urllib3 - https://pypi.org/project/urllib3/
 
 * Setup the project from source files;
 
-    - Download and install Python >=3.10.4 from https://www.python.org/downloads/
+    - Download and install Python >=3.10.5 from https://www.python.org/downloads/
 
     - Ensure Python is added to environment SYS Path.
 
@@ -143,4 +132,5 @@ The project dependencies as are follows;
    - I'm not responsible for how this tool is used. 
     
 ## Contact
+
 Created by James Dunne - <james.dunne1@gmail.com>

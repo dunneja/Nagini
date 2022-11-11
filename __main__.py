@@ -3,7 +3,7 @@
 # ----------------------------------------------------------------------------
 # Filename     : __main__.py
 # Author       : James Dunne <james.dunne1@gmail.com>
-# License      : LGPL-3.0-only
+# License      : GPL-3.0
 # Comment      : This file is part of Nagini.
 # ----------------------------------------------------------------------------
 from nagini import nagini

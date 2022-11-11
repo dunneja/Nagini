@@ -3,7 +3,7 @@
 # ----------------------------------------------------------------------------
 # Filename     : nagini_datac.py
 # Author       : James Dunne <james.dunne1@gmail.com>
-# License      : LGPL-3.0-only
+# License      : GPL-3.0
 # Comment      : This file is part of Nagini.
 # ----------------------------------------------------------------------------
 # Tested Models: Phaser / VersaLink / WorkCentre / DocuCentre / AperosPort-V
@@ -19,8 +19,8 @@ from pysnmp import hlapi  # Import Standard Python Modules.
 from functions import nagini_csv as nagini_csv  # CSV functions.
 from functions import nagini_dir as nagini_dir  # Directory I/O Functions.
 from functions import nagini_log as nagini_log  # Logging Function.
-from functions import nagini_snmp as nagini_snmp # SNMP functions.
-from functions import nagini_global # Global functions shared. 
+from functions import nagini_snmp as nagini_snmp  # SNMP functions.
+from functions import nagini_global  # Global functions shared.
 
 class prn_data_col():
     """
@@ -30,9 +30,9 @@ class prn_data_col():
         # Define config file.
         self.config_file = config_file
         # Set csv filename.
-        self.csv_file = csv_file  
+        self.csv_file = csv_file
         # Printer vendor name.
-        self.vendor = vendor  
+        self.vendor = vendor
         # Read the config_file contents.
         config = configparser.ConfigParser()
         config.read(self.config_file)
@@ -40,12 +40,14 @@ class prn_data_col():
         self.snmp_hostname_oid = config.get(self.vendor, 'snmp_hostname_oid')
         # Syslc.
         self.sys_location_oid = config.get(self.vendor, 'sys_location_oid')
-        self.mac_addr_oid = config.get(self.vendor, 'mac_addr_oid')  # Mac Address.
+        # Mac Address.
+        self.mac_addr_oid = config.get(self.vendor, 'mac_addr_oid')
         self.mono_oid = config.get(self.vendor, 'mono_oid')  # Mono.
         self.color_oid = config.get(self.vendor, 'color_oid')  # Color.
         self.total_oid = config.get(self.vendor, 'total_oid')  # Total counts.
         # Device desc oid.
-        self.hr_Device_Descr_oid = config.get(self.vendor, 'hr_Device_Descr_oid')
+        self.hr_Device_Descr_oid = config.get(
+            self.vendor, 'hr_Device_Descr_oid')
         # Sys firmware oid.
         self.sys_Descr_oid = config.get(self.vendor, 'sys_Descr_oid')
         # Serialnumber oid.
@@ -65,7 +67,8 @@ class prn_data_col():
         prn_qty = len(self.printers)  # Count total printers.
         # Write csv header fields to csv file in output directory.
         # Usage: <function>(output_dir, filename, fileformat)
-        nagini_csv.csv_header('output', 'prn_datacol_output', '.csv', 'prn_datac')
+        nagini_csv.csv_header(
+            'output', 'prn_datacol_output', '.csv', 'prn_datac')
         # Loop through csv file and call methods from class.
         for printer in self.printers:
             self.trigram = printer['Trigram']
@@ -73,12 +76,12 @@ class prn_data_col():
             self.snmp_cs = printer['SNMPGet']
             # start looping through all class methods per printer.
             print('---------------------------------------------------------------' +
-            '-------------------------------------------------------')
+                  '-------------------------------------------------------')
             print(f' Printer {prn_count} of {prn_qty}')
             print(
                 f' Starting Printer SNMP interrogation on IP: {str(self.dev_ip)}')
             print('---------------------------------------------------------------' +
-            '-------------------------------------------------------')
+                  '-------------------------------------------------------')
             prn_count += 1  # Increase Printer Count by 1.
             # Call methods from the prndatacollector class.
             self.prn_desc()  # Retrieves Printer Description.
@@ -108,7 +111,7 @@ class prn_data_col():
             # Clear prnoutput list.
             self.prn_output.clear()
         nagini_global.end_msg()
-    
+
     def prn_desc(self):
         """
         Method to collect printer description from SNMP OID.
@@ -118,7 +121,7 @@ class prn_data_col():
             prn_hrdd = nagini_snmp.get(
                 self.dev_ip, [self.hr_Device_Descr_oid], hlapi.CommunityData(self.snmp_cs))
             # find the vendor string in the hrDeviceDescr string as provided.
-            if (str(prn_hrdd).find(self.vendor) != -1):  
+            if (str(prn_hrdd).find(self.vendor) != -1):
                 print(
                     f' * Device Description: {prn_hrdd[self.hr_Device_Descr_oid]}')
                 self.prn_info['Description'] = str(
@@ -164,7 +167,8 @@ class prn_data_col():
         """
         try:
             # Using SNMPv2c, we retrieve the mac address of the remote device.
-            prn_mac = nagini_snmp.snmpmac(self.dev_ip, self.snmp_cs, self.mac_addr_oid)
+            prn_mac = nagini_snmp.snmpmac(
+                self.dev_ip, self.snmp_cs, self.mac_addr_oid)
             print(f' * Printer MAC Address: {str(prn_mac)}')
             self.prn_info['MAC Address'] = str(prn_mac)
         except RuntimeError:
@@ -200,7 +204,7 @@ class prn_data_col():
         """
         Method to collect printer color count value from SNMP OID.
         """
-        try: 
+        try:
             # Using SNMPv2c, we retrieve the color count of the remote device.
             prn_cc = nagini_snmp.get(
                 self.dev_ip, [self.color_oid], hlapi.CommunityData(self.snmp_cs))
@@ -216,7 +220,7 @@ class prn_data_col():
         try:
             # Using SNMPv2c, we retrieve total impressions of the remote device.
             prn_tc = nagini_snmp.get(
-                self.dev_ip, [self.total_oid], hlapi.CommunityData(self.snmp_cs)) 
+                self.dev_ip, [self.total_oid], hlapi.CommunityData(self.snmp_cs))
             print(f' * Total Count: {str(prn_tc[self.total_oid])}')
             self.prn_info['Totalcount'] = str(prn_tc[self.total_oid])
         except RuntimeError:

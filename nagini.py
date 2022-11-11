@@ -3,7 +3,7 @@
 # ----------------------------------------------------------------------------
 # Filename     : nagini.py
 # Author       : James Dunne <james.dunne1@gmail.com>
-# License      : LGPL-3.0-only
+# License      : GPL-3.0
 # Comment      : This file is part of Nagini.
 # ----------------------------------------------------------------------------
 # Import Nagini Graphical User Interface. 

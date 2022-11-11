@@ -9,27 +9,16 @@
 
 """ Main Nagini GUI module. """
 
-# Import python core modules.
 import os
 import clipboard
 import PySimpleGUI as sg
 
-# Import classes, methods and functions.
 from functions.nagini_csv import create_prn_csv, create_passwd_csv
 from functions.nagini_config import config_file
-
 from gui.nagini_csv_view import csv_viewer
 from gui.nagini_help import about, github, usage, notice
 from gui.nagini_common import popup_warning
-
-from icons.nagini_icons import printer
-from icons.nagini_icons import warning
-
-# Define config file variable.
-ini_file = 'config.ini'
-
-# Pass ini file variable to config_file class.
-conf = config_file(ini_file)
+from icons.nagini_icons import printer, warning
 
 def prn_tool_gui():
     
@@ -48,12 +37,14 @@ def prn_tool_gui():
     # Define the window main layout.
     layout = [[sg.Menu(menu_def, tearoff=False)],
             [sg.Text('Select a CSV file containing printer information.')],
-            [sg.Text('Printer CSV:', size=(11, 1)), sg.Input(size=(49, 1), default_text='Printers.csv', key='_INPUT_'), sg.FileBrowse(file_types=(("CSV Files", "*.csv"),),)],
-            [sg.Text('Password CSV:', size=(11, 1), key='_CSVPTXT_', visible=False), sg.Input(size=(49, 1), default_text='Passwords.csv', key='_CSVPASSWD_', visible=False), sg.FileBrowse(file_types=(("CSV Files", "*.csv"),),visible=False, key='_CSVPFB_')],
+            [sg.Text('Printer CSV:', size=(11, 1)), sg.Input(size=(49, 1), default_text='conf/printers.csv', key='_INPUT_'), sg.FileBrowse(file_types=(("CSV Files", "*.csv"),),)],
+            [sg.Text('Password CSV:', size=(11, 1), key='_CSVPTXT_', visible=False), sg.Input(size=(49, 1), default_text='conf/passwords.csv', key='_CSVPASSWD_', visible=False), sg.FileBrowse(file_types=(("CSV Files", "*.csv"),),visible=False, key='_CSVPFB_')],
             [sg.Radio('Printer Connection Checker', 'Radio1', default='True', key='_PRNCONNCHK_', enable_events=True), sg.Radio('SNMP Passwd Checker', 'Radio1', enable_events=True, key='_PRNSNMPCHK_'), sg.Radio('SNMP Data Collector', 'Radio1', key='_PRNDATACOL_', enable_events=True),],
             [sg.Output(size=(80, 20), key='_OUTPUT_')],
-            [sg.Submit(button_text='Start'), sg.Button(button_text='Clear'), sg.Cancel(button_text='Quit'), sg.Text('Vendor Selection:', visible=False, key='_VENDOR_TXT_'), sg.Combo(['Xerox','HP'], default_value='Xerox', size=(20,5), key='_VENDOR_', visible=False), sg.Push(), sg.Button(button_text='View CSV File')], ]
+            [sg.Submit(button_text='Start'), sg.Button(button_text='Clear'), sg.Cancel(button_text='Quit'), sg.Text('Vendor Selection:', visible=False, key='_VENDOR_TXT_'), sg.Combo(['Xerox','HP'], default_value='HP', size=(20,5), key='_VENDOR_', visible=False), sg.Push(), sg.Button(button_text='View CSV File')], ]
     
+    # TODO: add default vendor to config.ini
+
     # Icons
     printer_base64 = printer
     warning_base64 = warning
@@ -131,14 +122,14 @@ def prn_tool_gui():
             
         if event == 'Printers CSV':
             
-            if create_prn_csv('Printers.csv') == 1:
+            if create_prn_csv('conf/Printers.csv') == 1:
                 
                 popup = sg.PopupOK('Printers CSV File Already Exists!',
                         title='Warning!', keep_on_top='True', icon=warning_base64, relative_location=(0,0))
                 
             else: 
                 
-                window['_INPUT_']('Printers.csv')
+                window['_INPUT_']('conf/Printers.csv')
                 
                 popup = sg.PopupOK('CSV File Generated!',
                         'Check README for CSV Config options.',
@@ -146,13 +137,13 @@ def prn_tool_gui():
                 
         if event == 'Passwords CSV':
             
-            if create_passwd_csv('Passwords.csv') == 1:
+            if create_passwd_csv('conf/Passwords.csv') == 1:
                 
                 popup = sg.PopupOK('Passwords CSV File Already Exists!',
                      title='Warning!', keep_on_top='True', icon=warning_base64, relative_location=(0,0))
                 
             else:
-                window['_CSVPTXT_']('Passwords.csv')
+                window['_CSVPTXT_']('conf/Passwords.csv')
                 window['_OUTPUT_']('')
                 popup = sg.PopupOK('CSV File Generated!',
                         'Check README for CSV Config options.',

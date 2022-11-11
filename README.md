@@ -14,7 +14,8 @@
 - This project was developed for the requirements of a large customer with an inconsistent fleet configuration.
 - The purpose of this project is to enable the customer to perform discovery on HP & Xerox Devices on the existing printer estate.
 - Due to the technical challenges around device configurations, a tool was required to enable the team to feed in 30,000 IP's, and 1500+ SNMP Community strings from a CSV file based on a location identifier. 
-- Some printers had ICMP turned off. All printers allowed HTTP(s) Connections. Printers hostname was unique - DNS FQDN naming convention partly used the printer vendor name. This could be used to identify printer type during discovery.
+- Some printers had ICMP turned off. All printers allowed HTTP(s) Connections. 
+- Printers hostname was unique - DNS FQDN naming convention partly used the printer vendor name. This could be used to identify printer type during discovery.
 - This tool tests printer connectivity via ICMP, HTTP/s and DNS, it also collects device information via SNMP and outputs results to a csv file for analysis.
 
 ## Technologies Used
@@ -32,9 +33,9 @@
         - requests - https://pypi.org/project/requests/
         - pysnmp - https://pysnmp.readthedocs.io/en/latest/
         - urllib3 - https://pypi.org/project/urllib3/
-- Pyinstaller - version 4.10 - https://pyinstaller.readthedocs.io/en/stable/ (Only used to create EXE from *.py files)
 
 ## Features
+
 The tool provides the following capabilities:
 
 * Printer Connection Checker. (Is there a printer on the IP? What Type?)
@@ -115,7 +116,7 @@ The project dependencies as are follows;
 
 * Setup the project from source files;
 
-    - Download and install Python 3.10.4 from https://www.python.org/downloads/
+    - Download and install Python >=3.10.4 from https://www.python.org/downloads/
 
     - Ensure Python is added to environment SYS Path.
 
@@ -131,7 +132,7 @@ The project dependencies as are follows;
 
     - Ensure all Dependencies are installed.
     - Populate the CSV file(s) as per the example entry provided. 
-    - Run 'python3 nagini.py' 
+    - Run 'python -m  nagini' 
     - Check Output dir for output results and logs dir for error logs. 
 
 ## Notes

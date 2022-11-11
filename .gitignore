@@ -1,0 +1,15 @@
+# Files
+*.ico
+
+# Directories
+__pycache__
+logs/
+output/
+venv/
+mibs/
+core/__pycache__
+functions/__pycache__
+gui/__pycache__
+icons/__pycache__
+icons/ico
+icons/png

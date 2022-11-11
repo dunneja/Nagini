@@ -29,7 +29,7 @@ def popup_warning(function, input, passwd, vendor):
     Warning popup and ini file check function.
     """
     
-    ini_file = 'config.ini'
+    ini_file = 'conf/config.ini'
     
     # Pass ini file variable to config_file class.
     conf = config_file(ini_file)

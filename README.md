@@ -124,9 +124,11 @@ The tool provides the following capabilities:
     - Ensure all Dependencies are installed.
     - Populate the CSV file(s) as per the example entry provided. 
     - Run 
-     ```
-    'python -m  nagini' 
-     ```
+    
+        ```
+        python -m  nagini
+        ```
+        
     - Check Output dir for output results and logs dir for error logs. 
 
 ## Notes

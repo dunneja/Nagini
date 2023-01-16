@@ -112,8 +112,10 @@ The tool provides the following capabilities:
     - Clone this repo to local file system.
 
     - Install deps from the provided requirements.txt file as per below;
- 
-        - pip3 install -r requirements.txt
+        
+        ```
+        pip3 install -r requirements.txt
+        ```
 
 ## Usage
 
@@ -121,7 +123,10 @@ The tool provides the following capabilities:
 
     - Ensure all Dependencies are installed.
     - Populate the CSV file(s) as per the example entry provided. 
-    - Run 'python -m  nagini' 
+    - Run 
+     ```
+    'python -m  nagini' 
+     ```
     - Check Output dir for output results and logs dir for error logs. 
 
 ## Notes
